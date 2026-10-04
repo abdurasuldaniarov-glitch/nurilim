@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Медресе — Документтерди башкаруу системасы</title>
+<link rel="icon" href="assets/logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== КИРҮҮ БЕТИ ===== -->
+<section id="login">
+  <form id="loginForm" class="login-card" autocomplete="off">
+    <img src="assets/logo.svg" alt="Логотип" class="logo">
+    <h1>Медресе</h1>
+    <p class="muted">Документтерди башкаруу системасы</p>
+    <div class="tabs">
+      <button type="button" class="tab active" data-role="viewer">👤 Колдонуучу</button>
+      <button type="button" class="tab" data-role="admin">🛡 Администратор</button>
+    </div>
+    <label>Логин<input id="loginUser" required></label>
+    <label>Сыр сөз<input id="loginPass" type="password" required></label>
+    <button class="btn primary block">Кирүү</button>
+    <p class="hint">Демо: <b>user / user123</b> · <b>admin / admin123</b></p>
+    <p class="secure">🔒 Secure Document System</p>
+  </form>
+</section>
+
+<!-- ===== НЕГИЗГИ ТИЛКЕМЕ ===== -->
+<div id="app" hidden>
+  <aside id="sidebar">
+    <div class="brand"><img src="assets/logo.svg" alt=""><span>Медресе</span></div>
+    <nav id="nav"></nav>
+    <div class="secure">🔒 Secure Document System</div>
+  </aside>
+  <div id="backdrop"></div>
+
+  <div class="main-wrap">
+    <header>
+      <button id="burger" aria-label="Меню">☰</button>
+      <h2 class="title">Медресе — Документтерди башкаруу системасы</h2>
+      <input id="search" type="search" placeholder="🔍 Аты-жөнү, документ, түрү, категория...">
+      <div class="head-actions">
+        <span id="roleBadge" class="badge"></span>
+        <button id="bell" class="icon-btn" title="Билдирүүлөр">🔔<i id="bellCount" hidden>0</i></button>
+        <button id="theme" class="icon-btn" title="Күндүз/Түнкү режим">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page" id="p-dashboard"></section>
+      <section class="page" id="p-documents"></section>
+      <section class="page" id="p-students"></section>
+      <section class="page" id="p-teachers"></section>
+      <section class="page" id="p-folders"></section>
+      <section class="page" id="p-scanner"></section>
+      <section class="page" id="p-archive"></section>
+      <section class="page" id="p-settings"></section>
+    </main>
+  </div>
+</div>
+
+<!-- Модалдар жана билдирүүлөр -->
+<div id="modal" class="overlay" hidden><div class="modal" id="modalBox"></div></div>
+<div id="toasts"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
